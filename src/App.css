@@ -53,6 +53,7 @@
   background: transparent;
   border-bottom: 1px solid #a6a6a6;
 }
+
 .image-upload > input
 {
     display: none;
@@ -94,13 +95,16 @@
   text-align: center;
   width: 100%;
 }
-#file_list {
-  display: inline;
+ul#file_list li{
+  display: inline-block;
   float: left;
 }
 ul {
   list-style-type: none;
   text-align: left;
+}
+ul#file_list{
+  display: inline;
 }
 .add {
   background-color: white;
