@@ -24,7 +24,7 @@ class Cards extends Component {
                             className="card-image" />
                         <div className="card-body">
                             <p className="p_color_g1 align_l">
-                                Product Title<br />
+                                Product Title<hr />
                                 &#8377;--
                             </p>
                         </div>

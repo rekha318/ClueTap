@@ -29,7 +29,7 @@ class Images extends Component {
     }
     render() {
         return (
-            <div className="col-md-6 col-sm-12 col-xs-12">
+            <div className="col-md-6 col-sm-12 col-xs-12 image-back">
                 <ul className="list-group" id="file_list">
                     {
                         Object.keys(this.state.files).map(function (key, index) {
@@ -54,8 +54,10 @@ class Images extends Component {
                                     </div>
                                     : null}
                             </div>
-                            <div>
-                                <button className="add" onClick={() => {
+                            <div className="button-align">
+                                
+                            {!this.state.display ?
+                            <button className="add" onClick={() => {
                                     this.setState({ display: true }, () => {
                                         document.getElementById('file_list').style.height = "150px";
                                         document.getElementById('file_list').style.overflowY = "scroll";
@@ -63,10 +65,10 @@ class Images extends Component {
                                         document.getElementsByClassName('inner1')[0].style.height = "100%";
                                         document.getElementsByClassName('inner1')[0].style.display = "flex";
                                         document.getElementsByClassName('inner1')[0].style.alignItems = "flex-end";
-                                        // document.getElementsByClassName('inner1')[0].style.justifyContent= "flex-end";
+                                        document.getElementsByClassName('inner1')[0].style.justifyContent= "center";
 
                                     })
-                                }} type="submit">+</button>
+                                }} type="submit">+</button>:null}
                             </div>
                         </form>
                         <br />

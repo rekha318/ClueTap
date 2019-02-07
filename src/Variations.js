@@ -54,7 +54,7 @@ class Variations extends Component {
                                         ref="variationName" placeholder="Add option name"
                                     /> : null}
                             </div>
-                            <div>
+                            <div className="button-align">
                                 <button className="add" onClick={() => {
                                     this.setState({ display: true },()=>{
                                         document.getElementById('variation_list').style.height = "150px";
