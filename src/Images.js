@@ -29,7 +29,7 @@ class Images extends Component {
     }
     render() {
         return (
-            <div className="col-md-6 col-sm-12 col-xs-12 image-back">
+            <div className="h_200">
                 <ul className="list-group" id="file_list">
                     {
                         Object.keys(this.state.files).map(function (key, index) {
@@ -60,7 +60,7 @@ class Images extends Component {
                             <button className="add" onClick={() => {
                                     this.setState({ display: true }, () => {
                                         document.getElementById('file_list').style.height = "150px";
-                                        document.getElementById('file_list').style.overflowY = "scroll";
+                                        document.getElementById('file_list').style.overflowY = "auto";
 
                                         document.getElementsByClassName('inner1')[0].style.height = "100%";
                                         document.getElementsByClassName('inner1')[0].style.display = "flex";
@@ -71,7 +71,6 @@ class Images extends Component {
                                 }} type="submit">+</button>:null}
                             </div>
                         </form>
-                        <br />
                         <br />
                         {
                             !this.state.display ?

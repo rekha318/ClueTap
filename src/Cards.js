@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CardDetails from './CardDetails';
 import Images from './Images';
+import Variations from './Variations';
 
 class Cards extends Component {
     constructor(props) {
@@ -46,15 +47,25 @@ class Cards extends Component {
                     <div class="modal-content">
                         <div class="modal-body">
                             <div className="row">
-                                <div className="col-md-6 col-sm-12 col-xs-12">
+                                <div className="col-md-6 col-sm-6 col-xs-12">
                                     <img src={"./images/images" + this.state.index + ".jpg"}
                                         alt="Card image"
                                         className="card-image" />
                                 </div>
-                                <Images />
-                            </div><br />
-                            <CardDetails />
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <div className="col-md-6 col-sm-6 col-xs-12 image-back">
+                                    <Images />
+                                </div>
+                            </div>
+                            <br />
+                            <div className="row">
+                                <div className="col-md-6 col-sm-6 col-xs-12">
+                                    <CardDetails />
+                                </div>
+                                <div className="col-md-6 col-sm-6 col-xs-12">
+                                    <Variations />
+                                </div>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal">&#x261E;</button>
                         </div>
                     </div>
                 </div>

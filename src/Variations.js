@@ -28,7 +28,7 @@ class Variations extends Component {
     }
     render() {
         return (
-            <div className="col-md-6 col-sm-12 col-xs-12">
+            <div className="h_300">
                 <ul className="list-group" id="variation_list">
                     {
                         Object.keys(this.state.variations).map(function (key, index) {
@@ -58,14 +58,13 @@ class Variations extends Component {
                                 <button className="add" onClick={() => {
                                     this.setState({ display: true },()=>{
                                         document.getElementById('variation_list').style.height = "150px";
-                                        document.getElementById('variation_list').style.overflowY = "scroll";
+                                        document.getElementById('variation_list').style.overflowY = "auto";
 
                                         document.getElementsByClassName('inner')[0].style.verticalAlign = "bottom";
                                     })
                                 }} type="submit">+</button>
                             </div>
                         </form>
-                        <br />
                         <br />
                         {
                             !this.state.display ?

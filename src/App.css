@@ -8,6 +8,12 @@
 .p_color_g1 {
   color:  #a6a6a6
 }
+.h_200 {
+  height: 200px;
+}
+.h_300 {
+  height: 300px;
+}
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
