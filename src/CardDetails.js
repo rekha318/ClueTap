@@ -19,21 +19,26 @@ class CardDetails extends Component {
                     </p>
                     <p className="p_color_g1 align_l f_s_10">
                         Price<br />
-                        <input type="number" className="textbox"
-                            placeholder="Enter Price"
-                        />
+                        <span class="input-euro left">
+                            <input type="number" className="textbox"
+                                placeholder="Enter Price"
+                            />
+                        </span>
                     </p>
                     <p className="p_color_g1 align_l f_s_10">
                         Other Price<br />
-                        <input type="number" className="textbox"
-                            placeholder="Enter Other Price" />
+                        <span class="input-euro left">
+                            <input type="number" className="textbox"
+                                placeholder="Enter Other Price" />
+                        </span>
                     </p>
                     <p className="p_color_g1 align_l f_s_10">
                         Shipping Cost<br />
-                        {/* <span class="currency">&#8377; */}
-                        <input type="number" className="textbox"
-                            placeholder="Enter Shipping Cost"
-                        />
+                        <span class="input-euro left">
+                            <input type="number" className="textbox"
+                                placeholder="Enter Shipping Cost"
+                            />
+                        </span>
                     </p>
                     <p className="p_color_g1 align_l f_s_10">
                         Inventory<br />

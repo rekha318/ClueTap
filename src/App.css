@@ -53,6 +53,20 @@
   margin-top: 2px;
   font-size: 12px;
 }
+.input-euro {
+  position: relative;
+}
+.input-euro.left input {
+  padding-left:18px;
+}
+.input-euro:before {
+  position: absolute;
+  top: 0;
+  content:"₹";
+}
+.input-euro.left:before {
+  left: 5px;
+}
 .variation_style {
   display: table;
   position: absolute;
