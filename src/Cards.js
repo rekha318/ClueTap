@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CardDetails from './CardDetails';
+import Images from './Images';
 
 class Cards extends Component {
     constructor(props) {
@@ -50,8 +51,7 @@ class Cards extends Component {
                                         alt="Card image"
                                         className="card-image" />
                                 </div>
-                                <div className="col-md-6 col-sm-12 col-xs-12">
-                                </div>
+                                <Images />
                             </div><br />
                             <CardDetails />
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
