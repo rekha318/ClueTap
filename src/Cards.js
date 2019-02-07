@@ -16,12 +16,11 @@ class Cards extends Component {
                 <div className="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <div data-toggle="modal"
                         data-target="#myModal"
-                        className="card"
-                        style={{ width: "100%" }}
+                        className="card-i card"
                     >
                         <img src={"./images/images" + i + ".jpg"}
                             alt="Card image"
-                            style={{ width: "100%", height: "200px" }} />
+                            className="card-image" />
                         <div className="card-body">
                             <p className="p_color_g1 align_l">
                                 Product Title<br />
@@ -49,7 +48,7 @@ class Cards extends Component {
                                 <div className="col-md-6 col-sm-12 col-xs-12">
                                     <img src={"./images/images" + this.state.index + ".jpg"}
                                         alt="Card image"
-                                        style={{ width: "100%", height: "200px" }} />
+                                        className="card-image" />
                                 </div>
                                 <div className="col-md-6 col-sm-12 col-xs-12">
                                 </div>

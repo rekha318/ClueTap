@@ -5,16 +5,19 @@ class Variations extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            display: false,
             variations: {
             }
         }
     }
     createVariation = (e) => {
         e.preventDefault();
-        var variation = this.refs.variationName.value;
-        if (typeof variation === 'string' && variation.length > 0) {
-            this.addVariation(variation);
-            this.refs.variationForm.reset();
+        if (this.refs.variationName) {
+            var variation = this.refs.variationName.value;
+            if (typeof variation === 'string' && variation.length > 0) {
+                this.addVariation(variation);
+                this.refs.variationForm.reset();
+            }
         }
     }
 
@@ -26,29 +29,52 @@ class Variations extends Component {
     render() {
         return (
             <div className="col-md-6 col-sm-12 col-xs-12">
-                <div className="container">
-                    <ul className="list-group text-center">
+                <ul className="list-group" id="variation_list">
+                    {
+                        Object.keys(this.state.variations).map(function (key, index) {
+                            return <div>
+                                Option {index + 1}
+                                <br />
+                                <li>
+                                    <input type="text"
+                                        className="textbox"
+                                        value={this.state.variations[key]} />
+                                </li>
+                            </div>
+                        }.bind(this))
+                    }
+                </ul>
+                <div className="variation_style">
+                    <p className="inner">
+                        <form className="form-inline" ref="variationForm"
+                            onSubmit={this.createVariation}>
+                            <div className="form-group">
+                                {this.state.variations.length || this.state.display ?
+                                    <input type="text" className="textbox"
+                                        ref="variationName" placeholder="Add option name"
+                                    /> : null}
+                            </div>
+                            <div>
+                                <button className="add" onClick={() => {
+                                    this.setState({ display: true },()=>{
+                                        document.getElementById('variation_list').style.height = "150px";
+                                        document.getElementById('variation_list').style.overflowY = "scroll";
+
+                                        document.getElementsByClassName('inner')[0].style.verticalAlign = "bottom";
+                                    })
+                                }} type="submit">+</button>
+                            </div>
+                        </form>
+                        <br />
+                        <br />
                         {
-                            Object.keys(this.state.variations).map(function (key) {
-                                return <li>{this.state.variations[key]}</li>
-                            }.bind(this))
+                            !this.state.display ?
+                                <div>Have variations to your product like
+                            size, color and more?</div> :
+                                <div>Add more Variations</div>
                         }
-                    </ul>
-                </div>
-                {/* <div className="variation_style">
-                        <p className="inner">Have variations to your product like
-                        size, color and more?
                     </p>
-                    </div> */}
-                <form className="form-inline" ref="variationForm" onSubmit={this.createVariation}>
-                    <div className="form-group">
-                        <input type="text" className="textbox"
-                            ref="variationName"
-                        />
-                    </div>
-                    <br/>
-                    <button type="submit">+</button>
-                </form>
+                </div>
             </div>
         );
     }
