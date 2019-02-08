@@ -48,7 +48,7 @@ class Variations extends Component {
                     <p className="inner">
                         <form className="form-inline" ref="variationForm"
                             onSubmit={this.createVariation}>
-                            <div className="form-group">
+                            <div>
                                 {this.state.variations.length || this.state.display ?
                                     <input type="text" className="textbox"
                                         ref="variationName" placeholder="Add option name"
