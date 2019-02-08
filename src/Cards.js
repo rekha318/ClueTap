@@ -19,9 +19,9 @@ class Cards extends Component {
         for (var i = 0; i < 12; i++) {
             cards.push(
                 <div className="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <OverlayTrigger trigger="click" placement="right"
+                    <OverlayTrigger trigger="click"
                         rootClose overlay={
-                            <Popover id="popover-basic" right>
+                            <Popover id="popover-basic" >
                                 <div class="modal-body">
                                     <div className="row">
                                         <div className="col-md-6 col-sm-6 col-xs-12">
