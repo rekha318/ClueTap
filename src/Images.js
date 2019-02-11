@@ -45,7 +45,7 @@ class Images extends Component {
                         <div class="container1">
 
                             <img id="add-image" src="./images/images_upload.png"
-                                />
+                            />
                             <div className="centered">
                                 <form className="form-inline" ref="fileForm"
                                     onSubmit={this.createfile}>
@@ -60,23 +60,23 @@ class Images extends Component {
                                             </div>
                                             : null}
                                     </div>
-                                    <div className="button-align">
-
-                                        {!this.state.display ?
-                                            <button className="add" onClick={() => {
-                                                this.setState({ display: true }, () => {
-                                                    document.getElementById('add-image').style.display = "none";
-                                                    document.getElementById('file_list').style.height = "150px";
-                                                    document.getElementById('file_list').style.overflowY = "auto";
-                                                    document.getElementsByClassName('inner1')[0].style.height = "100%";
-                                                    document.getElementsByClassName('inner1')[0].style.display = "flex";
-                                                    document.getElementsByClassName('inner1')[0].style.alignItems = "flex-end";
-                                                    document.getElementsByClassName('inner1')[0].style.justifyContent = "center";
-
-                                                })
-                                            }} type="submit">+</button> : null}
-                                    </div>
                                 </form>
+                                <div>
+
+                                    {!this.state.display ?
+                                        <button className="add" onClick={() => {
+                                            this.setState({ display: true }, () => {
+                                                document.getElementById('add-image').style.display = "none";
+                                                document.getElementById('file_list').style.height = "150px";
+                                                document.getElementById('file_list').style.overflowY = "auto";
+                                                document.getElementsByClassName('inner1')[0].style.height = "100%";
+                                                document.getElementsByClassName('inner1')[0].style.display = "flex";
+                                                document.getElementsByClassName('inner1')[0].style.alignItems = "flex-end";
+                                                document.getElementsByClassName('inner1')[0].style.justifyContent = "center";
+
+                                            })
+                                        }} type="submit">+</button> : null}
+                                </div>
                                 <br />
                                 {
                                     !this.state.display ?

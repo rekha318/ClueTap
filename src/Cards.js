@@ -77,7 +77,7 @@ class Cards extends Component {
                 }
             </div>
             <div className="next-div">
-            <button className="btn-next">Next <span className="next-arrow">→</span></button>
+            <a href="/" className="btn-next">Next <span className="next-arrow">→</span></a>
             </div>
         </div>
         );
