@@ -16,9 +16,9 @@ class Cards extends Component {
     }
     showCard() {
         var cards = [];
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 6; i++) {
             cards.push(
-                <div className="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <OverlayTrigger trigger="click"
                         rootClose overlay={
                             <Popover id="popover-basic" >
@@ -42,10 +42,14 @@ class Cards extends Component {
                                             <Variations />
                                         </div>
                                     </div>
-                                    <button type="button" class="close"
-                                        onClick={() => {
-                                            document.getElementById('popover-basic').style.display = 'none';
-                                        }} data-dismiss="modal">&#x261E;</button>
+                                    <div className="arrow-div">
+                                        <button data-dismiss="modal" type="button" class="close"
+                                            className="btn-next-2" onClick={() => {
+                                                document.getElementById('popover-basic').style.display = 'none';
+                                            }}>
+                                            <span className="next-arrow-2">→</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </Popover>}>
                         <div className="card-i card">
@@ -71,6 +75,9 @@ class Cards extends Component {
                 {
                     this.showCard()
                 }
+            </div>
+            <div className="next-div">
+            <button className="btn-next">Next <span className="next-arrow">→</span></button>
             </div>
         </div>
         );

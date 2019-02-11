@@ -41,41 +41,49 @@ class Images extends Component {
                 </ul>
                 <div className="file_style">
                     <p className="inner1">
-                        <form className="form-inline" ref="fileForm"
-                            onSubmit={this.createfile}>
-                            <div className="form-group">
-                                {this.state.files.length || this.state.display ?
-                                    <div className="image-upload">
-                                        <label for="file-input">
-                                            <img src="./images/download.png" width={50} height={50} />
-                                        </label>
-                                        <input id="file-input" type="file"
-                                            onChange={(e) => this.handleChange(e)} />
+
+                        <div class="container1">
+
+                            <img id="add-image" src="./images/images_upload.png"
+                                />
+                            <div className="centered">
+                                <form className="form-inline" ref="fileForm"
+                                    onSubmit={this.createfile}>
+                                    <div className="form-group">
+                                        {this.state.files.length || this.state.display ?
+                                            <div className="image-upload">
+                                                <label for="file-input">
+                                                    <img src="./images/download.png" width={50} height={50} />
+                                                </label>
+                                                <input id="file-input" type="file"
+                                                    onChange={(e) => this.handleChange(e)} />
+                                            </div>
+                                            : null}
                                     </div>
-                                    : null}
-                            </div>
-                            <div className="button-align">
-                                
-                            {!this.state.display ?
-                            <button className="add" onClick={() => {
-                                    this.setState({ display: true }, () => {
-                                        document.getElementById('file_list').style.height = "150px";
-                                        document.getElementById('file_list').style.overflowY = "auto";
+                                    <div className="button-align">
 
-                                        document.getElementsByClassName('inner1')[0].style.height = "100%";
-                                        document.getElementsByClassName('inner1')[0].style.display = "flex";
-                                        document.getElementsByClassName('inner1')[0].style.alignItems = "flex-end";
-                                        document.getElementsByClassName('inner1')[0].style.justifyContent= "center";
+                                        {!this.state.display ?
+                                            <button className="add" onClick={() => {
+                                                this.setState({ display: true }, () => {
+                                                    document.getElementById('add-image').style.display = "none";
+                                                    document.getElementById('file_list').style.height = "150px";
+                                                    document.getElementById('file_list').style.overflowY = "auto";
+                                                    document.getElementsByClassName('inner1')[0].style.height = "100%";
+                                                    document.getElementsByClassName('inner1')[0].style.display = "flex";
+                                                    document.getElementsByClassName('inner1')[0].style.alignItems = "flex-end";
+                                                    document.getElementsByClassName('inner1')[0].style.justifyContent = "center";
 
-                                    })
-                                }} type="submit">+</button>:null}
+                                                })
+                                            }} type="submit">+</button> : null}
+                                    </div>
+                                </form>
+                                <br />
+                                {
+                                    !this.state.display ?
+                                        <div>ADD MORE PHOTOS</div> : null
+                                }
                             </div>
-                        </form>
-                        <br />
-                        {
-                            !this.state.display ?
-                                <div>ADD MORE PHOTOS</div> :null
-                        }
+                        </div>
                     </p>
                 </div>
             </div>
